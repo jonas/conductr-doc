@@ -45,12 +45,12 @@ val app1 = ActorSystem(s"$systemName-$systemVersion", config.withFallback(Config
 
 ### Rationale
 
-`[sbt-bundle](https://github.com/sbt/sbt-bundle#conductr-bundle-plugin)` has been enhanced to support two new types of version so that version information can be retained and reasoned with reliably. The versions are:
+[`sbt-bundle`](https://github.com/sbt/sbt-bundle#conductr-bundle-plugin) has been enhanced to support two new types of version so that version information can be retained and reasoned with reliably. The versions are:
 
 * `compatibilityVersion`; and
 * `systemVersion`
 
-A `compatibilityVersion` is a versioning scheme that will be included in a bundle's name that describes the level of compatibility with bundles that go before it. By default we take the major version component of a version as defined by [http://semver.org/]. However you can make this mean anything that you need it to mean in relation to bundles produced prior to it. We take the notion of a compatibility version from [http://ometer.com/parallel.html]."
+A `compatibilityVersion` is a versioning scheme that will be included in a bundle's name that describes the level of compatibility with bundles that go before it. By default we take the major version component of a version as defined by <http://semver.org/>. However you can make this mean anything that you need it to mean in relation to bundles produced prior to it. We take the notion of a compatibility version from <http://ometer.com/parallel.html>.
 
 The `systemVersion` is a version to associate with a system. This setting normally correlates to the value of `compatibilityVersion`, but doesn't have to. Systems declared using the `system` property can technically span across different bundles. Again, the meaning given to the `systemVersion` can be anything you need it to mean. However for Akka cluster based services it declares the name of the Akka cluster to join and is compatible with (Akka cluster requires binary compatibility for your service's messages given serialization concerns).
 
@@ -65,8 +65,8 @@ ConductRKeys.conductrApiVersion := "1.1"
 The use of Elasticsearch for collecting event and log data is no longer considered experimental and is therefore enabled by default. If you wish to continue using a syslog receiver then please apply to the following settings in your `application.ini` (the following relates to connectivity with a locally installed rsyslog):
 
 ```
--Dcontrail.syslog.server.host=127.0.0.1 
--Dcontrail.syslog.server.port=514 
+-Dcontrail.syslog.server.host=127.0.0.1
+-Dcontrail.syslog.server.port=514
 -Dcontrail.syslog.server.elasticsearch.enabled=off
 ```
 
